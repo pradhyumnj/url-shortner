@@ -14,6 +14,9 @@ def create(request):
         new_url = Url(link=link,uuid=uid)
         new_url.save()
         return HttpResponse(uid)
+
+def readme(request):
+    return render(request, "readme.html")
 def go(request,pk):
     url_details = Url.objects.get(uuid=pk)
     return redirect(url_details.link)
