@@ -17,6 +17,7 @@ def create(request):
 
 def readme(request):
     return render(request, "readme.html")
+    
 def go(request,pk):
     url_details = Url.objects.get(uuid=pk)
     return redirect(url_details.link)
